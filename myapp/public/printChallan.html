@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Billing System</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+<script src="javascripts/jquery-3.3.1.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/angularjs.min.js"></script>
+<script src="javascripts/FindAndPrintChallan.js"></script>
+</head>
+<body ng-app="ChallanPrint" ng-controller="ChallanPrintCTRL">
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="#">Billing System</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+			  <li ><a href="index.html">CSV To DB</a></li>
+			  <li class="active"><a href="printChallan.html" >Print Challan</a></li>
+
+			  <!-- <li><a href="#" ng-click="">Search</a></li> -->
+			</ul>
+  		</div>
+	</nav>
+	<p>Enter Range of Challan number</p>
+	<label>Start From <input type="text" id="_idStart" name="ChallanNumberStartPoint">   To   <input type="text" id="_idEnd" name="ChallanNumberEndPoint"></label>
+	<button class="btn btn-lg btn-primary" ng-click="findChallan()">Find</button>
+	Select firmName<input type="radio" ng-model="firmName" value="lalWala.html">Lalwala Enterptices
+  	<input type="radio" ng-model="firmName" value="anilcoaldepot.html">AnilCoalDepot &nbsp;&nbsp;&nbsp;&nbsp;
+  	<button ng-click="printPage()" class="btn btn-lg btn-danger">Print</button>
+	<!-- <div class="container-fluid" id="DataToImportView">
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>no</th>
+						<th>date</th>
+						<th>truck</th>
+						<th>qty</th>
+						<th>rate</th>
+						<th>amount</th>
+						<th>cgst</th>
+						<th>sgst</th>
+						<th>cess</th>
+						<th>total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="list in challanList">
+						<th>{{list._id}}</th>
+						<th>{{list.date}}</th>
+						<th>{{list.truck}}</th>
+						<th>{{list.quantity}}</th>
+						<th>{{list.rate}}</th>
+						<th>{{list.amount}}</th>
+						<th>{{list.cgst}}</th>
+						<th>{{list.sgst}}</th>
+						<th>{{list.cess}}</th>
+						<th>{{list.total}}</th>
+					</tr>
+				</tbody> 
+			</table>
+		</div>
+	</div> -->
+	<div ng-include="firmName"></div>
+</body>
+</html>

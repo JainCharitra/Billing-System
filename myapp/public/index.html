@@ -1,1 +1,70 @@
-bcgjghmcvb
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Billing System</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+<script src="javascripts/jquery-3.3.1.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/angularjs.min.js"></script>
+<script src="javascripts/csvToJson.js"></script>
+</head>
+<body ng-app="exportToCsvModule" ng-controller="exportToCsv">
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="#">Billing System</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.html">CSV To DB</a></li>
+			  <li><a href="printChallan.html" >Print Challan</a></li>
+			  <!-- <li><a href="#" ng-click="">Search</a></li>  ng-click="relocate('/printChallan')" -->
+			</ul>
+  		</div>
+	</nav>
+	<div class="container"  >
+		<div class="row">
+			<span >Select csv file Only</span>
+			<input type="file" id="CSVFilePath" accept=".csv"><br>
+			<button class="btn btn-lg btn-primary" onClick="ReadFileData(document.getElementById('CSVFilePath').files[0])">Import Data</button>
+			<button class="btn btn-lg btn-primary" ng-click="viewData()">View Data</button>
+			
+			<label>Is below Data is ready<button class="btn-lg btn-primary" ng-click="csvToJson()" ng-disabled="uploadBtn">Upload Data</button></label>
+			<label class="pull-right"><button ng-click="deleteAll()">Delete All</button></label>
+		</div>
+	</div>
+	<div class="container-fluid" id="DataToImportView">
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>no</th>
+						<th>date</th>
+						<th>truck</th>
+						<th>qty</th>
+						<th>rate</th>
+						<th>amount</th>
+						<th>cgst</th>
+						<th>cess</th>
+						<th>total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="list in csvData2">
+						<td>{{list._id}}</td>
+						<td>{{list.date}}</td>
+						<td>{{list.tduck}}</td>
+						<td>{{list.quantity}}</td>
+						<td>{{list.rate}}</td>
+						<td>{{list.amount}}</td>
+						<td>{{list.cgst}}</td>
+						<td>{{list.cess}}</td>
+						<td>{{list.total}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

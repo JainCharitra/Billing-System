@@ -1,0 +1,179 @@
+<!-- 
+	<div id="printIt">
+		<div style="width: 210mm; height: 297mm; border: groove" ng-repeat="list in challanList">
+			<div class="container-fluid" style=" height: 148.5mm; border-bottom: groove;">
+				<div class="row" style="border-bottom: groove; margin-top: 8mm;">
+					<div class="col-lg-5">
+						<span><strong>GSTIN</strong> - 23AKIPJ8532G1Z8</span><br>
+						<span style="font-size: 24px;"><strong>LALWALA ENTERPRISES</strong></span>
+					</div>
+					<div class="col-lg-3">
+						<span style="border: groove; font-size: 18px;"><strong>Delivery Challan</strong></span>
+					</div>
+					<div class="col-lg-4">
+						<span style="align-self: right">Behind Gurudwara, Parasia</span><br>
+						<span style="align-self: right">Distt - Chhindwara(M.P)Po 480441</span><br>
+						<span style="align-self: right; margin-left: -25px"><strong>Phone</strong> : 7987891995, <strong>(M)</strong> 8989612379</span>
+					</div>
+						
+				</div>
+				<div class="row">
+					<span class="col-lg-12">
+						<span ><strong>Challan No.</strong> : 2018/4568</span>
+						<span class="pull-right"><strong>Date:</strong> 25/12/1992</span>
+					</span>
+				</div>
+				<div class="row">
+					<span class="col-lg-12">
+						<span ><strong>To: M/s.:</strong> MB POWER (M.P.) LTD., JAITHARI. <strong>GSTIN</strong>-23AAFCM6698A1ZH </span><br>
+						<span class="pull-right" style=""><strong>Truck No.:</strong> MP28HG1954</span>
+					</span>
+				</div>
+				<table class="table" border="1">
+					<thead>
+						<tr>
+							<th>S.No.</th>
+							<th>Particulars</th>
+							<th>Qty.(M.T.)</th>
+							<th>Rate(P.M.T.)</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td><strong>Coal<br>(HSN Code : 2701)</strong></td>
+							<td style="text-align: right">26.25</td>
+							<td style="text-align: right">4647</td>
+							<td style="text-align: right">119307</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><strong>CGST@2.5%</strong></td>
+							<td style="text-align: right">1193</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><strong>SGST@2.5%</strong></td>
+							<td style="text-align: right">1193</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><strong>Cess@400</strong></td>
+							<td style="text-align: right">11932</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><strong>TOTAL</strong></td>
+							<td style="text-align: right">119354</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<span class="col-lg-12">
+						<span><strong>In words Rs.</strong> One lakh nineteen thousand three hundred fifty four </span><br>
+						<span class="pull-right"><strong>For - LALWALA ENTERPRISES</strong></span><br><br><br>
+						<span class="pull-right"><strong>Manager</strong></span>
+					</span>
+				</div>
+			</div>
+			
+		</div>
+	</div> 
+ -->
+
+
+	<div id="printIt">
+		<div style="width: 210mm; height: 297mm; border: groove;" ng-repeat="list in challanList">
+			<div class="container-fluid" style=" height: 148.5mm; border-bottom: groove;">
+				<div class="row" style="border-bottom: groove; margin-top: 8mm;">
+					<div class="col-lg-12">
+						
+						<span><strong>GSTIN</strong> - 23AKIPJ8532G1Z8</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+						<span style="border: groove; font-size: 18px;"><strong>Delivery Challan</strong></span>
+						<span class="pull-right">Behind Gurudwara, Parasia<br>Distt.-Chhindwara(M.P.)Po 480441<br>Phone : 7987891995,(M)8989612379</span>
+						<br><span style="font-size: 24px;"><strong>LALWALA ENTERPRISES</strong></span>
+
+					</div>
+					
+						
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<span ><strong>Challan No.</strong> : {{list._id}}</span>
+						<span class="pull-right"><strong>Date:</strong> {{list.date}}</span>
+					</div>
+				</div>
+				<div class="row">
+<!--					<span><strong>To :</strong></span><br>-->
+					<div class="col-lg-12">
+						<span ><strong>To: M/s.:</strong> MB POWER (M.P.) LTD., JAITHARI. <strong>GSTIN</strong>-23AAFCM6698A1ZH </span><br>
+						<span class="pull-right" style=""><strong>Truck No.:</strong> {{list.truck}}</span>
+					</div>
+				</div>
+				<table class="table" border="1">
+					<thead>
+						<tr>
+							<th>S.No.</th>
+							<th>Particulars</th>
+							<th>Qty.(M.T.)</th>
+							<th>Rate(P.M.T.)</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="5"></td>
+							<td rowspan="5"><strong>Coal<br>(HSN Code : 2701)</strong></td>
+							<td rowspan="5" style="text-align: right">{{list.quantity}}</td>
+							<td style="text-align: right">{{list.rate}}</td>
+							<td style="text-align: right">{{list.amount}}</td>
+						</tr>
+						<tr>
+							<!-- <td></td>
+							<td></td>
+							<td></td> -->
+							<td><strong>CGST@2.5%</strong></td>
+							<td style="text-align: right">{{list.cgst}}</td>
+						</tr>
+						<tr>
+							<!-- <td></td>
+							<td></td>
+							<td></td> -->
+							<td><strong>SGST@2.5%</strong></td>
+							<td style="text-align: right">{{list.sgst}}</td>
+						</tr>
+						<tr>
+							<!-- <td></td>
+							<td></td>
+							<td></td> -->
+							<td><strong>Cess@400</strong></td>
+							<td style="text-align: right">{{list.cess}}</td>
+						</tr>
+						<tr>
+							<!-- <td></td>
+							<td></td>
+							<td></td> -->
+							<td><strong>TOTAL</strong></td>
+							<td style="text-align: right">{{list.total}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-lg-12">
+						<span><strong>In words Rs.</strong>{{ numToWord(list.total) }} </span><br>
+						<span class="pull-right"><strong>For - LALWALA ENTERPRISES</strong></span><br><br><br>
+						<span class="pull-right"><strong>Manager</strong></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
